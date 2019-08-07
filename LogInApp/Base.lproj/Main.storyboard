@@ -71,6 +71,7 @@
                                 </state>
                                 <connections>
                                     <action selector="checkPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="pqf-Kv-m45"/>
+                                    <segue destination="fgI-fA-kcz" kind="show" identifier="SucessLogin" id="i4V-uv-hgl"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7mr-b1-RPW">
@@ -134,20 +135,70 @@
             </objects>
             <point key="canvasLocation" x="136" y="311"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="sZu-Lt-fbW">
             <objects>
-                <viewController id="fgI-fA-kcz" sceneMemberID="viewController">
+                <viewController id="fgI-fA-kcz" customClass="MainViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2B4-Nj-Vh1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="С возвращением!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T1-bi-zLO">
+                                <rect key="frame" x="20" y="144" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vcZ-9k-Izg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-Ea-tdy">
+                                <rect key="frame" x="20" y="318" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.63990676403045654" green="0.91473817825317383" blue="0.92485743761062622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7G1-Mj-p8O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Вернуться назад">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ftm-BK-j9y" kind="unwind" unwindAction="unwindSeque:" id="fG9-1F-fOe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKe-pE-h97">
+                                <rect key="frame" x="20" y="224" width="374" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="29u-eu-dGM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qKe-pE-h97" firstAttribute="top" secondItem="9T1-bi-zLO" secondAttribute="bottom" constant="50" id="5RN-QR-qth"/>
+                            <constraint firstItem="w7U-Bd-i1c" firstAttribute="trailing" secondItem="Ban-Ea-tdy" secondAttribute="trailing" constant="20" id="9C8-OB-AwC"/>
+                            <constraint firstItem="w7U-Bd-i1c" firstAttribute="trailing" secondItem="qKe-pE-h97" secondAttribute="trailing" constant="20" id="H3Z-5K-ojV"/>
+                            <constraint firstItem="9T1-bi-zLO" firstAttribute="leading" secondItem="w7U-Bd-i1c" secondAttribute="leading" constant="20" id="Oxt-iq-xEy"/>
+                            <constraint firstItem="9T1-bi-zLO" firstAttribute="top" secondItem="w7U-Bd-i1c" secondAttribute="top" constant="100" id="Uss-yo-PAX"/>
+                            <constraint firstItem="qKe-pE-h97" firstAttribute="leading" secondItem="w7U-Bd-i1c" secondAttribute="leading" constant="20" id="hbA-WW-ipK"/>
+                            <constraint firstItem="w7U-Bd-i1c" firstAttribute="trailing" secondItem="9T1-bi-zLO" secondAttribute="trailing" constant="20" id="jTN-PX-qlT"/>
+                            <constraint firstItem="Ban-Ea-tdy" firstAttribute="leading" secondItem="w7U-Bd-i1c" secondAttribute="leading" constant="20" id="kdy-Z8-K93"/>
+                            <constraint firstItem="Ban-Ea-tdy" firstAttribute="top" secondItem="qKe-pE-h97" secondAttribute="bottom" constant="70" id="zgW-AM-Fkd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="w7U-Bd-i1c"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Ban-Ea-tdy" id="AbP-Tv-mh7"/>
+                        <outlet property="loginText" destination="qKe-pE-h97" id="MJr-xD-LHo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3F6-x3-v8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ftm-BK-j9y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="923" y="132"/>
+            <point key="canvasLocation" x="1587" y="88"/>
         </scene>
         <!--Забыли пароль?-->
         <scene sceneID="i1n-EE-yIL">

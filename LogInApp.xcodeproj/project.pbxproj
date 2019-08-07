@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB306BD622FA432800C63581 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB306BD522FA432800C63581 /* ForgotPasswordViewController.swift */; };
+		AB306BD822FA52B600C63581 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB306BD722FA52B600C63581 /* MainViewController.swift */; };
 		AB87562A22F9F4ED008056D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87562922F9F4ED008056D5 /* AppDelegate.swift */; };
 		AB87562C22F9F4ED008056D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87562B22F9F4ED008056D5 /* ViewController.swift */; };
 		AB87562F22F9F4ED008056D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB87562D22F9F4ED008056D5 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		AB306BD522FA432800C63581 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		AB306BD722FA52B600C63581 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AB87562622F9F4ED008056D5 /* LogInApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogInApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB87562922F9F4ED008056D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB87562B22F9F4ED008056D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				AB87563222F9F4F1008056D5 /* LaunchScreen.storyboard */,
 				AB87563522F9F4F1008056D5 /* Info.plist */,
 				AB306BD522FA432800C63581 /* ForgotPasswordViewController.swift */,
+				AB306BD722FA52B600C63581 /* MainViewController.swift */,
 			);
 			path = LogInApp;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				AB87562C22F9F4ED008056D5 /* ViewController.swift in Sources */,
 				AB87562A22F9F4ED008056D5 /* AppDelegate.swift in Sources */,
 				AB306BD622FA432800C63581 /* ForgotPasswordViewController.swift in Sources */,
+				AB306BD822FA52B600C63581 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

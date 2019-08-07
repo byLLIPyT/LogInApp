@@ -14,18 +14,19 @@ class ViewController: UIViewController {
     @IBOutlet var forgotPasswordButton: UIButton!
     @IBOutlet var anotherOptionButton: UIButton!
     
-    
     @IBOutlet var textLogin: UITextField!
     @IBOutlet var textPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         enterButton.layer.cornerRadius = 20
     }
     
+    @IBAction func unwindSeque(_ sender: UIStoryboardSegue) {}
+    
     @IBAction func checkPassword() {
         if textLogin.text == "user" && textPassword.text == "password" {
+            performSegue(withIdentifier: "SucessLogin", sender: nil)
         } else {
             wrongPassword()
         }
@@ -53,6 +54,16 @@ class ViewController: UIViewController {
                                                        style: .default,
                                                        handler: nil))
             self.present(alertWrongPassword, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "SucessLogin" else {  return }
+        let mainVC = segue.destination as! MainViewController
+        mainVC.login = textLogin.text!
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
